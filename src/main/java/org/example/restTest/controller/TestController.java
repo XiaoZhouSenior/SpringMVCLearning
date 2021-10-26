@@ -1,6 +1,7 @@
 package org.example.restTest.controller;
 
 //import org.example.restTest.controller.dto.customResponse;
+import org.example.restTest.controller.dto.TestRequestObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,11 @@ public class TestController {
     //    }
     @GetMapping(value = "/bodyvar")
     public ResponseEntity<customResponse> listReport(@RequestBody customResponse object) {
+        System.out.println(object);
+        return ResponseEntity.ok(object);
+    }
+    @PostMapping(value = "/bodyvar2")
+    public ResponseEntity<TestRequestObject> listReport(@RequestBody TestRequestObject object) {
         System.out.println(object);
         return ResponseEntity.ok(object);
     }
